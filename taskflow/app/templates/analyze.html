@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Log Analyzer — TaskFlow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 32px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: monospace;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus { border-color: #553c9a; }
+
+        button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 14px;
+            background: #553c9a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover { background: #44337a; }
+
+        .result {
+            margin-top: 24px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #553c9a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            color: #2d3748;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Log Analyzer</h1>
+        <p class="subtitle">Paste any error or log — Claude will explain it</p>
+
+        <form action="/analyze" method="POST">
+            <textarea 
+                name="log" 
+                placeholder="Paste your error log here...&#10;&#10;Example:&#10;Error: Connection refused&#10;  at port 5432 (postgresql)"
+                required
+            ></textarea>
+            <button type="submit">Analyze with Claude AI</button>
+        </form>
+
+        {% if explanation %}
+        <div class="result">{{ explanation }}</div>
+        {% endif %}
+
+        <a href="/" class="back">← Back to TaskFlow</a>
+    </div>
+</body>
+</html>
