@@ -1,0 +1,5 @@
+minikube-linux-amd64
+*.db
+__pycache__/
+*.pyc
+.env
