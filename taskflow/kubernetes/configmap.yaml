@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: taskflow-config
+data:
+  FLASK_ENV: "production"
+  PORT: "5000"
