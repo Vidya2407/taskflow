@@ -106,6 +106,23 @@ python automation/deploy.py
 python automation/cleanup.py
 ```
 
+## 📸 Screenshots
+
+### Live App on AWS EC2
+![App](app.png)
+
+### GitHub Actions CI/CD Pipeline
+![Pipeline](pipeline.png)
+
+### Grafana Monitoring Dashboard
+![Grafana](grafana.png)
+
+### Prometheus Targets
+![Prometheus](prometheus.png)
+
+### Docker Containers Running
+![Docker](docker.png)
+
 ## 👩‍💻 Author
 Vidya Vihasini C S
 - GitHub: [@Vidya2407](https://github.com/Vidya2407)
