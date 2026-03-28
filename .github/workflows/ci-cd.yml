@@ -56,7 +56,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull vidya2407/taskflow:latest
-            docker stop taskflow || true
-            docker rm taskflow || true
-            docker run -d --name taskflow -p 5000:5000 vidya2407/taskflow:latest
+            sudo docker pull vidya2407/taskflow:latest
+            sudo docker stop taskflow || true
+            sudo docker rm taskflow || true
+            sudo docker run -d --name taskflow -p 5000:5000 vidya2407/taskflow:latest
