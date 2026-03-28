@@ -107,8 +107,8 @@ resource "aws_instance" "taskflow_server" {
     yum install -y docker
     systemctl start docker
     systemctl enable docker
-    docker pull your-dockerhub-username/taskflow:latest
-    docker run -d -p 5000:5000 your-dockerhub-username/taskflow:latest
+    docker pull vidya2407/taskflow:latest
+    docker run -d -p 5000:5000 vidya2407/taskflow:latest
   EOF
 
   tags = {
