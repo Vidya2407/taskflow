@@ -100,6 +100,7 @@ resource "aws_instance" "taskflow_server" {
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.taskflow_subnet.id
   vpc_security_group_ids = [aws_security_group.taskflow_sg.id]
+  key_name               = "taskflow-key"
 
   user_data = <<-EOF
     #!/bin/bash
