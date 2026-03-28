@@ -3,3 +3,8 @@ minikube-linux-amd64
 __pycache__/
 *.pyc
 .env
+.terraform/
+*.tfstate
+*.tfvars
+aws/
+.aws/
